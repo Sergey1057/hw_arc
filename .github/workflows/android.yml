@@ -13,3 +13,5 @@ jobs:
           java-version: 11
       - name: Build with Gradle
         run: ./gradlew assembleDebug
+      - name: Run some unit tests
+        run: ./gradlew testDebugUnitTest
