@@ -1,8 +1,8 @@
 package com.example.myapplication.game
 
-class Move (val m: Movable) {
+class MoveCommand (val m: Movable) : Command {
 
-    fun execute(){
+    override fun execute(){
         m.setPosition(
             Vector.plus(
                 m.getPosition(),
