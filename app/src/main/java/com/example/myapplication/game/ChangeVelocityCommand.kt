@@ -1,6 +1,7 @@
 package com.example.myapplication.game
 
 class ChangeVelocityCommand (val velocityChangable: VelocityChangable) : Command{
+    override var type: Int = 4
 
     override fun execute() {
         val k = Math.toRadians(velocityChangable.getAngle().toDouble())
