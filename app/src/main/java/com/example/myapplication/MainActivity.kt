@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import com.example.myapplication.game.Command
 import com.example.myapplication.game.exceptionHandling.*
 import java.lang.Exception
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     )
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,4 +40,7 @@ class MainActivity : AppCompatActivity() {
     fun handle(cmd: Command, ex: Exception){
         handlers[cmd.type]?.handle(cmd, ex)
     }
+}
+
+operator fun Any.component1() {
 }
